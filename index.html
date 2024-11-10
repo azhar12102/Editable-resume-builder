@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Resume Builder</h1>
+        
+        <!-- Input Form Section -->
+        <div class="form-section" id="formSection">
+            <h2>Personal Information</h2>
+            <input type="text" id="nameInput" placeholder="Full Name">
+            <input type="text" id="contactInput" placeholder="Contact Information">
+            
+            <h2>Professional Summary</h2>
+            <textarea id="summaryInput" placeholder="Write a brief summary..."></textarea>
+
+            <h2>Work Experience</h2>
+            <div id="workExperienceInputs">
+                <input type="text" placeholder="Work Experience" class="work-input">
+            </div>
+            <button onclick="addWorkInput()">Add Work Experience</button>
+
+            <h2>Education</h2>
+            <input type="text" id="educationInput" placeholder="Education Details">
+            
+            <h2>Skills</h2>
+            <div id="skillsInputs">
+                <input type="text" placeholder="Skill" class="skill-input">
+            </div>
+            <button onclick="addSkillInput()">Add Skill</button>
+
+            <button onclick="previewResume()">Preview Resume</button>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="resume" id="resumePreview" style="display: none;">
+            <header>
+                <h1 id="previewName" contenteditable="true" onclick="editInPreview(this)">Your Name</h1>
+                <p id="previewContact" contenteditable="true" onclick="editInPreview(this)">Your Contact Info</p>
+            </header>
+
+            <section>
+                <h2>Professional Summary</h2>
+                <p id="previewSummary" contenteditable="true" onclick="editInPreview(this)">
+                    Your summary will appear here...
+                </p>
+            </section>
+
+            <section>
+                <h2>Work Experience</h2>
+                <ul id="previewWorkExperience">
+                    <!-- Work experiences will be displayed here -->
+                </ul>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <p id="previewEducation" contenteditable="true" onclick="editInPreview(this)">Your education details will appear here...</p>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <ul id="previewSkills">
+                    <!-- Skills will be displayed here -->
+                </ul>
+            </section>
+
+            <button onclick="editResume()">Edit Resume</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
